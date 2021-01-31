@@ -1,10 +1,7 @@
 const getJoke = document.getElementById("submitbutton");
-let jokesDiv = document.getElementById("jokes");
-
-document.body.appendChild(jokesDiv);
 
 if(localStorage.length > 0) {
-    let arr = Object.keys(localStorage);
+    let arr = Object.keys(localStorage).sort(function(a, b){return b-a});
     arr.forEach((key) => {
 
         let div = document.createElement("div");
@@ -25,7 +22,8 @@ if(localStorage.length > 0) {
             h4.textContent = obj.joke;
             div.appendChild(h4);
         }
-        jokesDiv.appendChild(div);   
+        
+        document.body.appendChild(div);
 
     });
     
@@ -44,22 +42,14 @@ getJoke.onclick = async function () {
             delivery: jsonData.delivery
         }
 
-        let h4 = document.createElement("h4");
-        h4.textContent = myJoke.setup + "\n" + myJoke.delivery;
-        document.body.appendChild(h4);
-
-        localStorage.setItem(new Date().toLocaleString(), JSON.stringify(myJoke));
+        localStorage.setItem(localStorage.length + 1, JSON.stringify(myJoke));
 
     } else {
         let myJoke = {
             joke: jsonData.joke
         }
-        
-        let h4 = document.createElement("h4");
-        h4.textContent = myJoke.joke;
-        document.body.appendChild(h4);
 
-        localStorage.setItem(new Date().toLocaleString(), JSON.stringify(myJoke));
+        localStorage.setItem(localStorage.length + 1, JSON.stringify(myJoke));
     }
 
     location.reload();

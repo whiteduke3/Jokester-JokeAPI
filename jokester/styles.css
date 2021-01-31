@@ -4,7 +4,15 @@ body {
     padding-bottom: 10%;
   }
 
+h1 {
+  color:rgb(33, 160, 139);
+}
 
+#submitbutton {
+  margin: 10px;
+  border-width: medium;
+  font-weight: bold;
+}
 
   
 .container {
@@ -13,17 +21,13 @@ body {
     margin-top: 40px
 }
 
-#jokes {
-  column-count: 3;
-  margin-top: 50px;
-  padding: 30px;
-}
 
 .jokediv {
       margin: auto;
       margin-top: 20px;
       width: 80%;
       border: 3px solid rgb(41, 199, 173);
-      border-radius: 3px;
+      border-radius: 10px;
+      background-color: rgb(41,199,173);
       padding: 40px;
 }
