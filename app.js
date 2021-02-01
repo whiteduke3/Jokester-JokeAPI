@@ -1,5 +1,14 @@
 const getJoke = document.getElementById("submitbutton");
 
+if(localStorage.length >= 10) {
+    let array = Object.keys(localStorage).sort(function(a, b){return a-b});
+    array.forEach((key) => {
+        if (parseInt(key) <= Math.floor(array.length/2)) {
+            localStorage.removeItem(key);
+        }
+    });
+}
+
 if(localStorage.length > 0) {
     let arr = Object.keys(localStorage).sort(function(a, b){return b-a});
     arr.forEach((key) => {
@@ -55,5 +64,6 @@ getJoke.onclick = async function () {
     location.reload();
 
 };
+
 
 
