@@ -1,0 +1,50 @@
+$mainColor: rgb(41, 199, 173);
+
+@mixin responsive-width {
+    margin: auto;
+    width: 80%;
+}
+
+body {
+    @include responsive-width();
+    padding-bottom: 10%;
+}
+
+h1 {
+  color: $mainColor;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+#submitbutton {
+  margin: 10px;
+  border-width: medium;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+
+#submitbutton:hover {
+  transform: scale(1.1);
+}
+
+  
+.container {
+    @include responsive-width();
+    margin-top: 40px
+}
+
+
+.jokediv {
+    @include responsive-width();
+    margin-top: 20px;
+    border: 3px solid $mainColor;
+    border-radius: 10px;
+    background-color: $mainColor;
+    padding: 40px;
+    transition: all 0.5s ease;
+}
+
+.jokediv:hover {
+  transform: scale(1.1);
+}
